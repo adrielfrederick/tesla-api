@@ -202,7 +202,7 @@ module TeslaApi
       ap(products)
       products.each do |p, v|
         if p.key?("energy_site_id")
-          sites.append[p,v]
+          # sites.append[p,v]
           ap(p)
         end
       end
