@@ -195,6 +195,10 @@ module TeslaApi
       get("/vehicles")["response"].map { |v| Vehicle.new(self, email, v["id"], v) }
     end
 
+    def energy_products
+      ap(get("/products")["response"])
+    end
+
     def vehicle(id)
       Vehicle.new(self, email, id, get("/vehicles/#{id}")["response"])
     end
