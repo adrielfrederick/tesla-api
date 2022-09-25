@@ -199,13 +199,12 @@ module TeslaApi
       products = get("/products")["response"]
       # Filter through the list of products for energy sites
       sites = []
-      ap(products)
       products.each do |p, v|
         if p.key?("energy_site_id")
-          # sites.append[p,v]
-          ap(p)
+          sites.append(p)
         end
       end
+      ap(sites)
     end
 
     def vehicle(id)
