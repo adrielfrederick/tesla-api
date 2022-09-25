@@ -195,14 +195,16 @@ module TeslaApi
       get("/vehicles")["response"].map { |v| Vehicle.new(self, email, v["id"], v) }
     end
 
-    def energy_products
+    def energy_sites
       products = get("/products")["response"]
-      products.each do |p|
-        ap(p)
-      end
       # Filter through the list of products for energy sites
-
-
+      sites = []
+      products.each do |p|
+        if p.key?("energy_site_id")
+          sites.append[p]
+          ap(p)
+        end
+      end
     end
 
     def vehicle(id)
