@@ -196,7 +196,13 @@ module TeslaApi
     end
 
     def energy_products
-      ap(get("/products")["response"])
+      products = get("/products")["response"]
+      products.each do |p|
+        ap(p)
+      end
+      # Filter through the list of products for energy sites
+
+
     end
 
     def vehicle(id)
