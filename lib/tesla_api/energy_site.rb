@@ -29,8 +29,8 @@ module TeslaApi
 
 
     # State
-    def site_status
-      client.get("/energy_sites/#{id}/site_status")["response"]
+    def live_status
+      client.get("/energy_sites/#{id}/live_status")["response"]
     end
 
 
