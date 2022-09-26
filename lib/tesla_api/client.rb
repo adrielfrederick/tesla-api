@@ -183,8 +183,8 @@ module TeslaApi
       access_token_expires_at <= DateTime.now
     end
 
-    def get(url)
-      api.get(url.sub(/^\//, ""), nil, {"Authorization" => "Bearer #{access_token}"}).body
+    def get(url, params: nil)
+      api.get(url.sub(/^\//, ""), params, {"Authorization" => "Bearer #{access_token}"}).body
     end
 
     def post(url, body: nil)
