@@ -204,7 +204,7 @@ module TeslaApi
           sites.append(p)
         end
       end
-      ap(sites)
+      sites.map { |s| EnergySite.new(self, email, s["energy_site_id"], s) }
     end
 
     def vehicle(id)
