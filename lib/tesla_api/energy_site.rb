@@ -42,11 +42,11 @@ module TeslaApi
         })["response"]
     end
 
-    def power_history(date)
+    def power_history(end_time)
       client.get("/energy_sites/#{site_id}/calendar_history",
         params: {
           kind:     'power',
-          end_date: date.strftime("%FT23:59:59%:z")
+          end_date: end_time.strftime("%FT%T%:z")
         })["response"]
     end
 
