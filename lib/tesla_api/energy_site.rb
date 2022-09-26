@@ -27,5 +27,14 @@ module TeslaApi
       energy_site.key?(name.to_s) || super
     end
 
+
+    # State
+    def site_status
+      client.get("/energy_sites/#{id}/site_status")["response"]
+    end
+
+
+    # History
+
   end
 end
