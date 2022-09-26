@@ -37,11 +37,10 @@ module TeslaApi
     # History
     def power_history(date)
       client.get("/energy_sites/#{site_id}/calendar_history",
-        {
+        params = {
           kind:     'power',
           end_date: date.strftime("%FT%T%:z")
-        }
-        )["response"]
+        })["response"]
     end
 
   end
